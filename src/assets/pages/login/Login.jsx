@@ -32,7 +32,7 @@ const Login = () => {
 
     try {
       const res = await fetch(
-        "https://saint-stream-server.onrender.com/api/user/login",
+        "https://saint-stream-server.onrender.com/api/v1/user/login",
         {
           method: "POST",
           body: JSON.stringify(formData),

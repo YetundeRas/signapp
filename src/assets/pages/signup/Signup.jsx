@@ -52,7 +52,7 @@ const Signup = () => {
     event.preventDefault();
     try {
       const res = await fetch(
-        "https://saint-stream-server.onrender.com/api/user/register",
+        "https://saint-stream-server.onrender.com/api/v1/user/register",
         {
           method: "POST",
           body: JSON.stringify(signupData),

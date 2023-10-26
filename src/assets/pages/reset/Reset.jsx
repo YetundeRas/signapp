@@ -16,7 +16,7 @@ const Reset = () => {
   async function handleSubmmit(event) {
     try {
       const res = await fetch(
-        "https://saint-stream-server.onrender.com/api/user/forgot-password",
+        "https://saint-stream-server.onrender.com/api/v1/user/forgot-password",
         {
           method: "POST",
           body: JSON.stringify(forgetpasswordData),
