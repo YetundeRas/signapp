@@ -1,29 +1,36 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsFillEyeSlashFill } from "react-icons/bs";
+import { AiFillCheckSquare } from "react-icons/ai";
+import { GrCheckbox } from "react-icons/gr";
 
 const Signup = () => {
+  const [checkbox, SetCheckbox] = useState(false);
+  const handlecheck = () => {
+    SetCheckbox((prev) => !prev);
+  };
   const [signupData, setsignupData] = useState({
-    username: "",
+    userName: "",
     email: "",
     password: "",
-    confirmpassword: "",
+    confirmPassword: "",
+    policy: true
   });
-  const { username, email, password, confirmpassword } = signupData;
+  const { userName, email, password, confirmPassword, policy } = signupData;
 
   const [toggle, setToggle] = useState(true);
   const handletoggle = () => {
     setToggle(!toggle);
   };
   const [togglee, setTogglee] = useState(false);
-   const handletogglee = () => {
-     setTogglee(!togglee);
-   };
+  const handletogglee = () => {
+    setTogglee(!togglee);
+  };
 
   function handleUsername(event) {
     setsignupData((prevState) => ({
       ...prevState,
-      username: event.target.value,
+      userName: event.target.value,
     }));
   }
 
@@ -44,7 +51,7 @@ const Signup = () => {
   function handleConfirmpassword(event) {
     setsignupData((prevState) => ({
       ...prevState,
-      confirmpassword: event.target.value,
+      confirmPassword: event.target.value,
     }));
   }
 
@@ -65,6 +72,7 @@ const Signup = () => {
       console.log(error.message);
     }
   }
+  
 
   return (
     <div className="signup">
@@ -74,9 +82,9 @@ const Signup = () => {
         type="text"
         id="username"
         onChange={handleUsername}
-        value={username}
+        value={userName}
       />
-      <label htmlFor="email">Email Address</label>
+      <label htmlFor="email">Email</label>
       <input type="text" id="email" onChange={handleEmaill} value={email} />
       <label htmlFor="password">Password</label>
       <div className="input1">
@@ -101,7 +109,7 @@ const Signup = () => {
           type={togglee ? "text" : "password"}
           id="confirm"
           onChange={handleConfirmpassword}
-          value={confirmpassword}
+          value={confirmPassword}
         />
         <span className="icon">
           <BsFillEyeSlashFill onClick={handletogglee}>
@@ -109,6 +117,12 @@ const Signup = () => {
             {togglee ? "Hide" : "show"}{" "}
           </BsFillEyeSlashFill>
         </span>
+      </div>
+      <div className="policy">
+        <label htmlFor="">
+          <input type="checkbox" checked={checkbox} onChange={handlecheck} value={policy} className="check"/>
+        </label>
+        <p>Accept policy</p>
       </div>
 
       <button className="btn" onClick={handleSubmitt}>

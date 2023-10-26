@@ -1,17 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Reset = () => {
-
   const [forgetpasswordData, setforgetpasswordData] = useState({
     email: "",
   });
   const { email } = forgetpasswordData;
-   function handleeEmail(event) {
-     setforgetpasswordData((prevState) => ({
-       ...prevState,
-       email: event.target.value,
-    }))
+  function handleeEmail(event) {
+    setforgetpasswordData((prevState) => ({
+      ...prevState,
+      email: event.target.value,
+    }));
   }
   async function handleSubmmit(event) {
     try {
@@ -24,9 +23,7 @@ const Reset = () => {
         }
       );
       const data = await res.json();
-      alert(JSON.stringify(data))
-
-      
+      alert(JSON.stringify(data));
     } catch (error) {
       console.log(error.message);
     }
@@ -35,8 +32,18 @@ const Reset = () => {
     <div className="signup">
       <h2>Forget Password</h2>
       <label htmlFor="email">Email Address</label>
-      <input type="text" id="email" placeholder="enter Email address" onChange={handleeEmail} value={email}/>
-      <button className="btn" onClick={handleSubmmit}>Reset Password</button>
+      <input
+        type="text"
+        id="email"
+        placeholder="enter Email address"
+        onChange={handleeEmail}
+        value={email}
+      />
+      
+
+      <button className="btn" onClick={handleSubmmit}>
+        Reset Password
+      </button>
       <p>
         Remember my Password <Link to="/login">Login</Link>{" "}
       </p>

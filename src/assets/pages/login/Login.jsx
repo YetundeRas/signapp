@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 
 const Login = () => {
+ 
   const [toggle, setToggle] = useState(true);
   const handletogle = () => {
     setToggle(!toggle);
@@ -64,6 +65,7 @@ const Login = () => {
           <BsFillEyeSlashFill onClick={handletogle} />
         </span>
       </div>
+      
 
       <button className="btn" onClick={handleSubmit}>
         Submit
