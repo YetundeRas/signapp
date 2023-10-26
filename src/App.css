@@ -1,0 +1,63 @@
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+  /* background-color: black; */
+}
+.head {
+  text-align: center;
+}
+.pix {
+  margin: auto;
+  padding: auto;
+  display: block;
+  width: 10%;
+}
+.signup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%;
+  /* background-color: blue; */
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  box-shadow: 0px 8px 8px 0px rgb(82, 75, 75);
+}
+input {
+  padding: 10px;
+  border-radius: 8px;
+  width: 50%;
+}
+.btn {
+  width: 20%;
+  padding: 10px;
+  border-radius: 8px;
+}
+p {
+  color: black;
+}
+
+h2 {
+  color: black;
+}
+label {
+  color: black;
+}
+.input1 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(100% - 30%);
+}
+@media (max-width: 1026px) {
+  .signup {
+    width: 350px;
+  }
+}
